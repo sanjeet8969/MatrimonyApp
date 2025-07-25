@@ -11,7 +11,7 @@ class SocketService {
       return;
     }
 
-    this.socket = io(process.env.VITE_API_URL, {
+    this.socket = io(import.meta.env.VITE_API_URL, {
       auth: {
         token
       },

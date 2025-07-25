@@ -14,7 +14,8 @@ const api = axios.create({
 // Request interceptor to add auth token
 api.interceptors.request.use(
   (config) => {
-    const token = localStorage.getItem('token');
+    // FIXED: Changed from 'token' to 'auth_token'
+    const token = localStorage.getItem('auth_token');
     if (token) {
       config.headers.Authorization = `Bearer ${token}`;
     }
@@ -36,15 +37,29 @@ api.interceptors.response.use(
       
       switch (status) {
         case 401:
-          localStorage.removeItem('token');
-          window.location.href = '/login';
-          toast.error('Session expired. Please login again.');
+          // FIXED: Remove the correct token key
+          localStorage.removeItem('auth_token');
+          // Check if we're not already on login page to avoid infinite redirects
+          if (window.location.pathname !== '/login') {
+            window.location.href = '/login';
+            toast.error('Session expired. Please login again.');
+          }
           break;
         case 403:
           toast.error('You do not have permission to access this resource.');
           break;
         case 404:
           toast.error('Resource not found.');
+          break;
+        case 422:
+          // Handle validation errors
+          if (data.errors) {
+            Object.values(data.errors).forEach(error => {
+              toast.error(error);
+            });
+          } else {
+            toast.error(data.message || 'Validation error.');
+          }
           break;
         case 500:
           toast.error('Server error. Please try again later.');
