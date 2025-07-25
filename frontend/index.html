@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Primary Meta Tags -->
+    <title>MatrimonyApp - Find Your Perfect Life Partner</title>
+    <meta name="title" content="MatrimonyApp - Find Your Perfect Life Partner" />
+    <meta name="description" content="India's most trusted matrimonial platform to find your soulmate. Join millions of profiles and find your perfect match today." />
+    <meta name="keywords" content="matrimony, marriage, wedding, bride, groom, life partner, soulmate, matchmaking" />
+    <meta name="author" content="MatrimonyApp Team" />
+    <meta name="robots" content="index, follow" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://matrimonyapp.com/" />
+    <meta property="og:title" content="MatrimonyApp - Find Your Perfect Life Partner" />
+    <meta property="og:description" content="India's most trusted matrimonial platform to find your soulmate. Join millions of profiles and find your perfect match today." />
+    <meta property="og:image" content="https://matrimonyapp.com/og-image.jpg" />
+    <meta property="og:site_name" content="MatrimonyApp" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://matrimonyapp.com/" />
+    <meta property="twitter:title" content="MatrimonyApp - Find Your Perfect Life Partner" />
+    <meta property="twitter:description" content="India's most trusted matrimonial platform to find your soulmate. Join millions of profiles and find your perfect match today." />
+    <meta property="twitter:image" content="https://matrimonyapp.com/twitter-image.jpg" />
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#e11d48" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="MatrimonyApp" />
+    <link rel="apple-touch-icon" href="/icon-192.png" />
+    
+    <!-- Manifest -->
+    <link rel="manifest" href="/manifest.json" />
+    
+    <!-- Preconnect to external domains for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    
+    <!-- Additional CSS for older browsers -->
+    <style>
+      /* Loading screen styles */
+      #initial-loader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #f9fafb;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+      }
+      
+      .loader-spinner {
+        width: 40px;
+        height: 40px;
+        border: 4px solid #e5e7eb;
+        border-top: 4px solid #e11d48;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+      
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      
+      /* Hide loader when app loads */
+      .app-loaded #initial-loader {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Initial loading spinner -->
+    <div id="initial-loader">
+      <div class="loader-spinner"></div>
+    </div>
+    
+    <!-- React root -->
+    <div id="root"></div>
+    
+    <!-- Scripts -->
+    <script type="module" src="/src/main.jsx"></script>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    
+    <!-- Remove initial loader when app starts -->
+    <script>
+      window.addEventListener('load', function() {
+        document.body.classList.add('app-loaded');
+      });
+    </script>
+  </body>
+</html>

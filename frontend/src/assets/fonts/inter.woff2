@@ -1,0 +1,12 @@
+// src/assets/fonts/index.js
+// Import Google Fonts via CSS instead of local files for better performance
+export const fontUrls = {
+  inter: 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap',
+  roboto: 'https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap'
+};
+
+// Add to index.css
+/*
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+*/

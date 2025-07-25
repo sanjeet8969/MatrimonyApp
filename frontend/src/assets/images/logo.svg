@@ -1,0 +1,13 @@
+<svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Heart Symbol -->
+  <path d="M20 12c0-4.4-3.6-8-8-8s-8 3.6-8 8c0 8 8 16 8 16s8-8 8-16z" fill="#e11d48"/>
+  <path d="M32 12c0-4.4-3.6-8-8-8s-8 3.6-8 8c0 8 8 16 8 16s8-8 8-16z" fill="#e11d48"/>
+  
+  <!-- Text -->
+  <text x="40" y="16" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1f2937">
+    Matrimony
+  </text>
+  <text x="40" y="28" font-family="Arial, sans-serif" font-size="10" fill="#6b7280">
+    Find Your Soulmate
+  </text>
+</svg>
