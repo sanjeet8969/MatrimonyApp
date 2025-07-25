@@ -12,7 +12,10 @@ export const useBreakpoint = () => {
 
 const BreakpointProvider = ({ children }) => {
   const [breakpoint, setBreakpoint] = useState('lg');
-  const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
+  const [dimensions, setDimensions] = useState({ 
+    width: typeof window !== 'undefined' ? window.innerWidth : 0, 
+    height: typeof window !== 'undefined' ? window.innerHeight : 0 
+  });
 
   useEffect(() => {
     const updateBreakpoint = () => {

@@ -26,25 +26,10 @@ const ResponsiveProvider = ({ children }) => {
     return desktop;
   };
 
-  const showMobileView = (content) => {
-    return breakpointData.isMobile ? content : null;
-  };
-
-  const showTabletView = (content) => {
-    return breakpointData.isTablet ? content : null;
-  };
-
-  const showDesktopView = (content) => {
-    return breakpointData.isDesktop ? content : null;
-  };
-
   const value = {
     ...breakpointData,
     getColumns,
-    getSpacing,
-    showMobileView,
-    showTabletView,
-    showDesktopView
+    getSpacing
   };
 
   return (
@@ -54,7 +39,7 @@ const ResponsiveProvider = ({ children }) => {
   );
 };
 
-// Wrapper component that includes BreakpointProvider
+// Fixed wrapper component
 const ResponsiveWrapper = ({ children }) => {
   return (
     <BreakpointProvider>
