@@ -94,7 +94,7 @@ matrimony-app/
 #### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/matrimony-app.git
+git clone https://github.com/sanjeet8969/MatrimonyApp
 cd matrimony-app
 ```
 
@@ -222,32 +222,3 @@ GET /:conversationId        → Get messages from a conversation
 ```
 
 </details>
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome!
-
-```bash
-# Fork the repository
-# Create a feature branch
-git checkout -b feature/AmazingFeature
-
-# Make changes & commit
-git commit -m 'Add AmazingFeature'
-
-# Push to your fork
-git push origin feature/AmazingFeature
-
-# Open a Pull Request
-```
-
----
-
-## 📜 License
-
-Distributed under the **MIT License**. See `LICENSE.txt` for more information.
-
----
-
