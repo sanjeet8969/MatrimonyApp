@@ -20,7 +20,7 @@ import {
   Archive,
   Trash2,
   Flag,
-  Block
+  Ban
 } from 'lucide-react';
 import toast from 'react-hot-toast';
 

@@ -11,7 +11,8 @@ class SocketService {
       return;
     }
 
-    this.socket = io(import.meta.env.VITE_API_URL, {
+    // ✅ Corrected: Using VITE_SOCKET_URL instead of VITE_API_URL
+    this.socket = io(import.meta.env.VITE_SOCKET_URL, {
       auth: {
         token
       },
@@ -43,49 +44,42 @@ class SocketService {
     }
   }
 
-  // Join user to their personal room
   joinUserRoom(userId) {
     if (this.socket) {
       this.socket.emit('join_user_room', userId);
     }
   }
 
-  // Join conversation room
   joinConversation(conversationId) {
     if (this.socket) {
       this.socket.emit('join_conversation', conversationId);
     }
   }
 
-  // Leave conversation room
   leaveConversation(conversationId) {
     if (this.socket) {
       this.socket.emit('leave_conversation', conversationId);
     }
   }
 
-  // Send message
   sendMessage(messageData) {
     if (this.socket) {
       this.socket.emit('send_message', messageData);
     }
   }
 
-  // Listen for new messages
   onNewMessage(callback) {
     if (this.socket) {
       this.socket.on('new_message', callback);
     }
   }
 
-  // Listen for message status updates
   onMessageStatusUpdate(callback) {
     if (this.socket) {
       this.socket.on('message_status_update', callback);
     }
   }
 
-  // Listen for typing indicators
   onTyping(callback) {
     if (this.socket) {
       this.socket.on('typing', callback);
@@ -98,7 +92,6 @@ class SocketService {
     }
   }
 
-  // Send typing indicator
   sendTyping(conversationId) {
     if (this.socket) {
       this.socket.emit('typing', conversationId);
@@ -111,7 +104,6 @@ class SocketService {
     }
   }
 
-  // Listen for user online status
   onUserOnline(callback) {
     if (this.socket) {
       this.socket.on('user_online', callback);
@@ -124,14 +116,12 @@ class SocketService {
     }
   }
 
-  // Listen for notifications
   onNotification(callback) {
     if (this.socket) {
       this.socket.on('notification', callback);
     }
   }
 
-  // Listen for interest requests
   onInterestRequest(callback) {
     if (this.socket) {
       this.socket.on('interest_request', callback);
@@ -144,7 +134,6 @@ class SocketService {
     }
   }
 
-  // Generic event listeners
   on(event, callback) {
     if (this.socket) {
       this.socket.on(event, callback);
@@ -163,7 +152,6 @@ class SocketService {
     }
   }
 
-  // Get connection status
   getConnectionStatus() {
     return {
       isConnected: this.isConnected,
